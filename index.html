@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hussien Fouad – Video Editor Portfolio</title>
+<meta name="description" content="Video editor in Riyadh with 8+ years in news, business and brand video. Arabic economic explainers for 9:16, podcast cutdowns and documentaries.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hussien Fouad – Video Editor Portfolio">
+<meta property="og:description" content="Video editor in Riyadh with 8+ years in news, business and brand video. Arabic economic explainers for 9:16, podcast cutdowns and documentaries.">
+<meta property="og:image" content="https://alhussienfoaud-arch.github.io/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://alhussienfoaud-arch.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hussien Fouad – Video Editor Portfolio">
+<meta name="twitter:description" content="Video editor in Riyadh with 8+ years in news, business and brand video. Arabic economic explainers for 9:16, podcast cutdowns and documentaries.">
+<meta name="twitter:image" content="https://alhussienfoaud-arch.github.io/og.jpg">
+<style>body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans+Arabic:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: an edit-suite look. A short intro, then work grouped by delivery format (9:16 vertical first, then 16:9), each card labelled the way a deliverable is labelled in post. */
+:root {
+  --bg: #f3f4f6;
+  --surface: #ffffff;
+  --ink: #12161d;
+  --muted: #5b6472;
+  --line: #d9dde3;
+  --accent: #c2410c;
+  --accent-ink: #ffffff;
+  --chip: #e7eaee;
+  --shadow: 0 1px 2px rgba(18,22,29,.06), 0 8px 24px rgba(18,22,29,.08);
+  --display: "Bricolage Grotesque", "IBM Plex Sans", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --arabic: "IBM Plex Sans Arabic", "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1218; --surface: #171b23; --ink: #eef0f3; --muted: #9aa3b2; --line: #2a303b;
+    --accent: #fb8a4c; --accent-ink: #1a0d05; --chip: #222833;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1218; --surface: #171b23; --ink: #eef0f3; --muted: #9aa3b2; --line: #2a303b;
+  --accent: #fb8a4c; --accent-ink: #1a0d05; --chip: #222833;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.ar { font-family: var(--arabic); }
+
+/* Intro reel: plays full-screen on page load, in the same edit-suite frame as the inline players */
+body.reel-open { overflow: hidden; }
+.reel { position: fixed; inset: 0; z-index: 50; background: var(--bg); display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 40px; padding: max(24px, env(safe-area-inset-top, 0px)) max(24px, env(safe-area-inset-right, 0px)) max(24px, env(safe-area-inset-bottom, 0px)) max(24px, env(safe-area-inset-left, 0px)); transition: opacity .45s ease, visibility .45s; }
+.reel.out { opacity: 0; visibility: hidden; }
+.reel-side { min-width: 0; }
+.reel-side.l { justify-self: end; text-align: right; }
+.reel-side .brand-lg { font-family: var(--display); font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.6rem); line-height: 1.02; letter-spacing: -.03em; margin: 10px 0 0; }
+.reel-frame { position: relative; height: min(84vh, 860px); aspect-ratio: 9 / 16; max-width: 100%; border-radius: 22px; overflow: hidden; background: var(--chip); border: 5px solid var(--ink); box-shadow: var(--shadow); }
+.reel-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.reel-bar { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: rgba(0,0,0,.15); }
+.reel-bar i { display: block; height: 100%; width: 0; background: var(--accent); }
+.reel-tc { font-family: var(--mono); font-size: .8rem; color: var(--muted); font-variant-numeric: tabular-nums; margin-top: 14px; }
+.reel-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.reel .btn { font-size: .9rem; padding: 10px 16px; }
+.reel .btn svg { width: 16px; height: 16px; fill: currentColor; flex: none; }
+.reel .sound-hint { position: absolute; left: 50%; top: 18px; transform: translateX(-50%); white-space: nowrap; box-shadow: var(--shadow); }
+@media (max-width: 800px) {
+  .reel { grid-template-columns: 1fr; grid-template-rows: auto minmax(0, 1fr) auto; gap: 14px; justify-items: center; }
+  .reel-side.l { justify-self: center; text-align: center; }
+  .reel-side.l .eyebrow, .reel-tc { display: none; }
+  .reel-side .brand-lg { font-size: 1.3rem; margin: 0; }
+  .reel-frame { height: 100%; max-height: 100%; border-width: 4px; border-radius: 18px; }
+  .reel-actions { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+}
+
+/* Top bar */
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-block: 22px; border-bottom: 1px solid var(--line); }
+.brand { font-family: var(--display); font-weight: 800; font-size: 1.15rem; letter-spacing: -.01em; text-decoration: none; }
+.top nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: .92rem; color: var(--muted); }
+.top nav a, .top nav button { text-decoration: none; }
+.top nav a:hover, .top nav button:hover { color: var(--ink); }
+.top nav button { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; }
+
+/* Intro */
+.intro { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 48px; align-items: center; padding-block: 56px 40px; }
+.eyebrow { font-family: var(--mono); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.3rem, 5.4vw, 4.1rem); line-height: 1.02; letter-spacing: -.03em; margin: 14px 0 18px; text-wrap: balance; }
+.lede { font-size: 1.12rem; color: var(--muted); max-width: 34rem; margin: 0 0 26px; }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 999px; font-weight: 600; font-size: .95rem; text-decoration: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; font-family: var(--body); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 28px; font-size: .9rem; color: var(--muted); }
+.facts b { color: var(--ink); font-weight: 600; }
+
+/* Phone stack in the intro */
+.stack { position: relative; display: flex; justify-content: center; align-items: flex-end; gap: 14px; }
+.phone { position: relative; width: 31%; max-width: 170px; aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; background: var(--chip); box-shadow: var(--shadow); border: 5px solid var(--ink); display: block; transition: transform .25s ease; }
+.phone:nth-child(2) { transform: translateY(-26px); }
+.phone img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.phone .tag { position: absolute; left: 8px; bottom: 8px; right: 8px; font-family: var(--arabic); font-size: .78rem; font-weight: 600; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.7); direction: rtl; text-align: right; }
+.phone:hover { transform: translateY(-6px); }
+.phone:nth-child(2):hover { transform: translateY(-32px); }
+
+/* Sections */
+section { padding-block: 44px; border-top: 1px solid var(--line); }
+.sec-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.6rem, 3vw, 2.2rem); letter-spacing: -.02em; line-height: 1.1; margin: 6px 0 0; }
+.sec-head p { margin: 0; color: var(--muted); max-width: 30rem; font-size: .98rem; }
+
+/* Work cards */
+.grid { display: grid; gap: 22px; }
+.grid.v { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.grid.h { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid.p { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.card { display: flex; flex-direction: column; gap: 10px; text-decoration: none; min-width: 0; }
+.thumb { position: relative; border-radius: 14px; overflow: hidden; background: var(--chip); box-shadow: var(--shadow); max-width: 100%; }
+.v .thumb { aspect-ratio: 9 / 16; }
+.h .thumb, .p .thumb { aspect-ratio: 16 / 9; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+.card:hover .thumb img { transform: scale(1.04); }
+.fmt { position: absolute; top: 10px; left: 10px; font-family: var(--mono); font-size: .7rem; letter-spacing: .05em; padding: 4px 8px; border-radius: 6px; background: rgba(15,18,24,.78); color: #fff; }
+.play { position: absolute; right: 10px; bottom: 10px; width: 38px; height: 38px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; opacity: .95; }
+.play svg { width: 14px; height: 14px; fill: var(--accent-ink); margin-left: 2px; }
+.card h3 { font-family: var(--body); font-size: 1rem; font-weight: 600; margin: 0; line-height: 1.3; }
+.card .ar-title { font-family: var(--arabic); font-size: .92rem; color: var(--muted); direction: rtl; text-align: left; unicode-bidi: plaintext; }
+.card .meta { font-size: .85rem; color: var(--muted); }
+.card .watch { font-size: .82rem; font-weight: 600; color: var(--accent); }
+
+/* Inline players */
+.players { display: grid; grid-template-columns: repeat(2, minmax(0, 300px)); gap: 32px; }
+.player { margin: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.player video { width: 100%; max-width: 100%; aspect-ratio: 9 / 16; border-radius: 18px; background: #000; box-shadow: var(--shadow); border: 5px solid var(--ink); display: block; }
+.player h3 { font-size: 1rem; font-weight: 600; margin: 0; line-height: 1.3; }
+.player .ar-title { font-family: var(--arabic); font-size: .92rem; color: var(--muted); unicode-bidi: plaintext; }
+.player .meta { font-size: .85rem; color: var(--muted); }
+@media (max-width: 520px) { .players { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } .player video { border-width: 3px; border-radius: 14px; } }
+
+/* Featured note above the vertical grid */
+.note { display: inline-block; font-size: .85rem; padding: 6px 12px; border-radius: 999px; background: var(--chip); color: var(--muted); margin-bottom: 18px; }
+
+/* About + skills */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; }
+.about p { margin: 0 0 14px; max-width: 36rem; }
+.tools { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 22px; }
+.tools span { font-size: .88rem; padding: 6px 12px; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); }
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.timeline li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 14px; padding-block: 14px; border-bottom: 1px solid var(--line); }
+.timeline li:first-child { padding-top: 0; }
+.timeline .when { font-family: var(--mono); font-size: .8rem; color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.timeline b { display: block; }
+.timeline span { color: var(--muted); font-size: .92rem; }
+
+/* Contact */
+.contact { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 32px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 28px; align-items: center; }
+.contact h2 { margin-bottom: 8px; }
+.contact p { margin: 0; color: var(--muted); }
+.lines { display: grid; gap: 12px; }
+.line { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; background: var(--bg); min-width: 0; }
+.line .label { font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); display: block; }
+.line .val { font-weight: 600; user-select: all; overflow-wrap: anywhere; }
+.line button { flex: none; font-size: .8rem; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; font-family: var(--body); }
+footer { padding-block: 30px 40px; color: var(--muted); font-size: .85rem; }
+
+@media (max-width: 960px) {
+  .grid.v { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  .intro { grid-template-columns: 1fr; gap: 40px; padding-top: 36px; }
+  .about, .contact { grid-template-columns: 1fr; }
+  .grid.h { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .grid.v { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .grid.h, .grid.p { grid-template-columns: 1fr; }
+  .contact { padding: 22px; }
+  .timeline li { grid-template-columns: 1fr; gap: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
+
+</head>
+<body>
+<div class="reel" id="reel" role="dialog" aria-modal="true" aria-label="Intro video">
+  <div class="reel-side l">
+    <div class="eyebrow">Intro · 9:16</div>
+    <div class="brand-lg">Hussien<br>Fouad</div>
+    <div class="reel-tc" id="reel-tc">00:00 / 00:55</div>
+  </div>
+  <div class="reel-frame">
+    <video id="reel-video" src="video/intro.mp4" playsinline preload="auto"></video>
+    <button class="btn primary sound-hint" id="reel-sound-hint" type="button" hidden>
+      <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
+      Tap for sound
+    </button>
+    <div class="reel-bar"><i id="reel-bar"></i></div>
+  </div>
+  <div class="reel-side reel-actions">
+    <button class="btn" id="reel-mute" type="button" aria-pressed="false">Mute</button>
+    <button class="btn primary" id="reel-skip" type="button">Enter portfolio →</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top">Hussien Fouad</a>
+    <nav aria-label="Sections">
+      <button type="button" id="replay">Intro</button>
+      <a href="#watch">Watch</a>
+      <a href="#vertical">Vertical</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#brand">Brand &amp; Docs</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="intro" id="top">
+    <div>
+      <div class="eyebrow">Video Editor · Social &amp; Vertical Content · Riyadh</div>
+      <h1>I turn long stories into short videos people watch to the end.</h1>
+      <p class="lede">8+ years editing news, business and brand video in Egypt and Saudi Arabia. Recent work: Arabic economic explainers built for 9:16, podcast cutdowns, and corporate documentaries.</p>
+      <div class="cta">
+        <a class="btn primary" href="#watch">Watch my work</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+      <div class="facts">
+        <span><b>Premiere Pro</b> · <b>Avid</b> · <b>After Effects</b></span>
+        <span>Arabic (native) · English</span>
+        <span>Available now</span>
+      </div>
+    </div>
+    <div class="stack" aria-label="Featured vertical videos">
+      <a class="phone" href="#watch"><img src="img/257381373.jpg" alt="The Dollar Story, vertical explainer"><span class="tag">حكاية الدولار</span></a>
+      <a class="phone" href="https://www.behance.net/gallery/257381271/_" target="_blank" rel="noopener"><img src="img/257381271.jpg" alt="The Cost of War on Russia, vertical report"><span class="tag">تكلفة الحرب على روسيا</span></a>
+      <a class="phone" href="#watch"><img src="img/256773729.jpg" alt="The war's cost to the Russian economy, vertical report"><span class="tag">الاقتصاد الروسي</span></a>
+    </div>
+  </div>
+
+  <section id="watch">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Play here · 9:16</div>
+        <h2>Watch two full pieces</h2>
+      </div>
+      <p>Two complete Arabic economic videos, edited for vertical social feeds. Tap play to watch them here.</p>
+    </div>
+    <div class="players">
+      <figure class="player">
+        <video controls playsinline preload="none" poster="video/russia-economy.jpg">
+          <source src="video/russia-economy.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <h3>The War's Cost to the Russian Economy</h3>
+          <div class="ar-title">تكلفة حرب روسيا على الاقتصاد الروسي</div>
+          <div class="meta">Economic report · 2:15</div>
+        </figcaption>
+      </figure>
+      <figure class="player">
+        <video controls playsinline preload="none" poster="video/dollar-story.jpg">
+          <source src="video/dollar-story.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <h3>The Dollar Story</h3>
+          <div class="ar-title">حكاية الدولار</div>
+          <div class="meta">Presenter-led explainer · 6:56</div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="vertical">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">9:16 · Social-first</div>
+        <h2>Vertical video</h2>
+      </div>
+      <p>Economic stories and product videos edited for the phone screen, with a hook in the first seconds and on-screen text built for sound-off viewing.</p>
+    </div>
+    <div class="grid v">
+      <a class="card" href="https://www.behance.net/gallery/257381373/_" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/257381373.jpg" alt="" loading="lazy"><span class="fmt">9:16</span><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+        <h3>The Dollar Story</h3>
+        <div class="ar-title">حكاية الدولار</div>
+        <div class="meta">Presenter-led economic explainer</div>
+        <span class="watch">Watch on Behance ↗</span>
+      </a>
+      <a class="card" href="https://www.behance.net/gallery/257381271/_" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/257381271.jpg" alt="" loading="lazy"><span class="fmt">9:16</span><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+        <h3>The Cost of War on Russia</h3>
+        <div class="ar-title">تقرير تكلفة الحرب على روسيا</div>
+        <div class="meta">Data-driven economic report</div>
+        <span class="watch">Watch on Behance ↗</span>
+      </a>
+      <a class="card" href="https://www.behance.net/gallery/256773729/_" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/256773729.jpg" alt="" loading="lazy"><span class="fmt">9:16</span><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+        <h3>The War's Cost to the Russian Economy</h3>
+        <div class="ar-title">تكلفة حرب روسيا على الاقتصاد الروسي</div>
+        <div class="meta">Economic report with motion graphics</div>
+        <span class="watch">Watch on Behance ↗</span>
+      </a>
+      <a class="card" href="https://www.behance.net/gallery/257558949/Nawras-Education-APP" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/257558949.jpg" alt="" loading="lazy"><span class="fmt">9:16 + 16:9</span><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+        <h3>Nawras Education App</h3>
+        <div class="ar-title">تطبيق نورس</div>
+        <div class="meta">App promo, cut for social and web</div>
+        <span class="watch">Watch on Behance ↗</span>
+      </a>
+      <a class="card" href="https://www.behance.net/gallery/255407289/Nawras-AI-videos" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/255407289.png" alt="" loading="lazy"><span class="fmt">9:16 × 4</span><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+        <h3>Nawras AI Videos</h3>
+        <div class="ar-title">فيديوهات نورس</div>
+        <div class="meta">Series of four vertical videos</div>
+        <span class="watch">Watch on Behance ↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="podcast">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Long-form → short-form</div>
+        <h2>Podcast: Haq Mashroot</h2>
+      </div>
+      <p>The full episode edit, and the short announcement cuts made from it to promote each episode on social media.</p>
+    </div>
+    <div class="grid p">
+      <a class="card" href="https://www.behance.net/gallery/225968105/_" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/225968105.jpg" alt="" loading="lazy"><span class="fmt">16:9 · Episode</span><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+        <h3>Haq Mashroot Podcast</h3>
+        <div class="ar-title">حق مشروط بودكاست</div>
+        <div class="meta">Episode edit</div>
+        <span class="watch">Watch on Behance ↗</span>
+      </a>
+      <a class="card" href="https://www.behance.net/gallery/225968453/-announcements" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/225968453.jpg" alt="" loading="lazy"><span class="fmt">Promo cuts</span><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+        <h3>Episode Announcements</h3>
+        <div class="ar-title">إعلانات حق مشروط</div>
+        <div class="meta">Short promos cut from the episodes</div>
+        <span class="watch">Watch on Behance ↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="brand">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">16:9 · Brand, documentary &amp; events</div>
+        <h2>Brand &amp; documentary</h2>
+      </div>
+      <p>Longer pieces for companies and events in Saudi Arabia, from a 40-year anniversary documentary to expo coverage.</p>
+    </div>
+    <div class="grid h">
+      <a class="card" href="https://www.behance.net/gallery/255384803/Obeikan-40-years-documentary" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/255384803.jpg" alt="" loading="lazy"><span class="fmt">16:9</span><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+        <h3>Obeikan: 40 Years</h3>
+        <div class="meta">Anniversary documentary</div>
+        <span class="watch">Watch on Behance ↗</span>
+      </a>
+      <a class="card" href="https://www.behance.net/gallery/255746187/1010-LABS-" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/255746187.png" alt="" loading="lazy"><span class="fmt">16:9</span><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+        <h3>10:10 LABS</h3>
+        <div class="ar-title">إرث يروي</div>
+        <div class="meta">Heritage film</div>
+        <span class="watch">Watch on Behance ↗</span>
+      </a>
+      <a class="card" href="https://www.behance.net/gallery/255385899/Obeikan-Digital-Solutions" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/255385899.png" alt="" loading="lazy"><span class="fmt">16:9</span><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+        <h3>Obeikan Digital Solutions</h3>
+        <div class="meta">Brand video with motion graphics</div>
+        <span class="watch">Watch on Behance ↗</span>
+      </a>
+      <a class="card" href="https://www.behance.net/gallery/255406257/_" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/255406257.jpg" alt="" loading="lazy"><span class="fmt">16:9</span><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+        <h3>Al Mahdi Company</h3>
+        <div class="ar-title">شركة المهدي</div>
+        <div class="meta">Company film</div>
+        <span class="watch">Watch on Behance ↗</span>
+      </a>
+      <a class="card" href="https://www.behance.net/gallery/250529393/Saudi-School-Expo" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/250529393.jpg" alt="" loading="lazy"><span class="fmt">16:9</span><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+        <h3>Saudi School Expo</h3>
+        <div class="meta">Event coverage</div>
+        <span class="watch">Watch on Behance ↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about">
+      <div>
+        <div class="eyebrow">About</div>
+        <h2>From newsroom to social feed</h2>
+        <p style="margin-top:16px">I started as a video journalist at Al Masry Al Youm, filming and editing news reports and interviews on daily deadlines. Since 2020 I have run post-production for Obeikan Investment Group in Riyadh, editing content for digital and social channels and planning it with marketing and business teams.</p>
+        <p>My job is finding the strongest moment in a long piece of footage and building a short story around it that stays accurate.</p>
+        <div class="tools" aria-label="Tools">
+          <span>Adobe Premiere Pro</span><span>Avid Media Composer</span><span>After Effects</span><span>Photoshop</span><span>Audio cleanup &amp; sound design</span>
+        </div>
+      </div>
+      <ol class="timeline" aria-label="Experience">
+        <li><span class="when">2020 – now</span><div><b>Media Marketing &amp; Video Editor</b><span>Obeikan Investment Group, Riyadh</span></div></li>
+        <li><span class="when">2019 – 2020</span><div><b>Video Director / Producer</b><span>Spotmedia · 20+ productions</span></div></li>
+        <li><span class="when">2019</span><div><b>Video Editor</b><span>Wizzora</span></div></li>
+        <li><span class="when">2014 – 2017</span><div><b>Video Journalist</b><span>Al Masry Al Youm, Cairo</span></div></li>
+        <li><span class="when">2014 – 2018</span><div><b>BBA</b><span>Alexandria University</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <h2>Let's work together</h2>
+        <p>Based in Riyadh and available immediately.</p>
+      </div>
+      <div class="lines">
+        <div class="line"><div><span class="label">Email</span><span class="val" id="email">alhussien.foaud@gmail.com</span></div><button type="button" data-copy="email">Copy</button></div>
+        <div class="line"><div><span class="label">Phone</span><span class="val" id="phone">+966 54 489 4075</span></div><button type="button" data-copy="phone">Copy</button></div>
+        <div class="line"><div><span class="label">Behance</span><a class="val" href="https://www.behance.net/hussienfoaud" target="_blank" rel="noopener">behance.net/hussienfoaud ↗</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>© Hussien Fouad · Riyadh, Saudi Arabia</footer>
+</div>
+
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var el = document.getElementById(btn.dataset.copy);
+    var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); };
+    var fallback = function () { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected'; };
+    try { navigator.clipboard.writeText(el.textContent).then(done, fallback); } catch (e) { fallback(); }
+  });
+});
+
+// Intro reel: try to play with sound; browsers that block that get a muted start and a "Tap for sound" button.
+(function () {
+  var reel = document.getElementById('reel');
+  var video = document.getElementById('reel-video');
+  var hint = document.getElementById('reel-sound-hint');
+  var mute = document.getElementById('reel-mute');
+  var bar = document.getElementById('reel-bar');
+  var tc = document.getElementById('reel-tc');
+  var fmt = function (s) { s = Math.floor(s || 0); return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); };
+
+  function syncMute() {
+    mute.textContent = video.muted ? 'Unmute' : 'Mute';
+    mute.setAttribute('aria-pressed', String(video.muted));
+    hint.hidden = !video.muted;
+  }
+  function start() {
+    reel.classList.remove('out');
+    document.body.classList.add('reel-open');
+    video.currentTime = 0;
+    video.muted = false;
+    video.play().catch(function () {
+      video.muted = true;
+      video.play().catch(function () {});
+    }).finally(syncMute);
+    syncMute();
+    document.getElementById('reel-skip').focus({ preventScroll: true });
+  }
+  function close() {
+    video.pause();
+    reel.classList.add('out');
+    document.body.classList.remove('reel-open');
+  }
+  function unmute() { video.muted = false; if (video.paused) video.play().catch(function () {}); syncMute(); }
+
+  hint.addEventListener('click', unmute);
+  mute.addEventListener('click', function () { video.muted ? unmute() : (video.muted = true, syncMute()); });
+  video.addEventListener('click', function () { if (video.muted) unmute(); else if (video.paused) video.play(); else video.pause(); });
+  video.addEventListener('timeupdate', function () {
+    var d = video.duration || 55.5;
+    bar.style.width = (video.currentTime / d * 100) + '%';
+    tc.textContent = fmt(video.currentTime) + ' / ' + fmt(d);
+  });
+  video.addEventListener('ended', close);
+  video.addEventListener('error', close);
+  document.getElementById('reel-skip').addEventListener('click', close);
+  document.getElementById('replay').addEventListener('click', start);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !reel.classList.contains('out')) close(); });
+  start();
+})();
+</script>
+</body>
+</html>
